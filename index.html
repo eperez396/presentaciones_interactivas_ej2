@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English A1 - Lesson 2: Present Continuous</title>
+    <style>
+        /* Modern Reset & Basic Setup */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            user-select: none;
+        }
+
+        body, html {
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* Modern single screen slide layout */
+            background: linear-gradient(135deg, #2e1065 0%, #0f172a 100%);
+            color: #f8fafc;
+        }
+
+        /* Presentation Container */
+        .app-container {
+            display: flex;
+            flex-direction: column;
+            width: 100vw;
+            height: 100vh;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        /* Top Header Navigation Bar */
+        header {
+            height: 65px;
+            background: rgba(46, 16, 101, 0.9);
+            border-bottom: 2px solid #c084fc;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+            z-index: 10;
+        }
+
+        .logo-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #e9d5ff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .badge-tag {
+            background-color: #9333ea;
+            color: white;
+            font-size: 0.85rem;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .slide-counter {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #d8b4fe;
+            background: #1e1b4b;
+            padding: 6px 18px;
+            border-radius: 12px;
+            border: 1px solid #581c87;
+        }
+
+        /* Main Canvas / Slide Area */
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1.2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide {
+            display: none;
+            width: 100%;
+            height: 100%;
+            max-width: 1300px;
+            background: #1e1b4b;
+            border: 2px solid #581c87;
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.6);
+            flex-direction: column;
+            justify-content: space-between;
+            animation: fadeIn 0.3s ease-in-out forwards;
+            overflow-y: auto;
+        }
+
+        .slide.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Slide Titles and Headers */
+        .slide-header {
+            margin-bottom: 1rem;
+            border-bottom: 2px dashed #7e22ce;
+            padding-bottom: 0.5rem;
+        }
+
+        .slide-title {
+            font-size: 2rem;
+            color: #c084fc;
+            font-weight: 800;
+        }
+
+        .slide-subtitle {
+            font-size: 1.15rem;
+            color: #e9d5ff;
+        }
+
+        /* Slide Body Layouts */
+        .slide-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            font-size: 1.2rem;
+            line-height: 1.5;
+            justify-content: center;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background: #2e1065;
+            border: 1px solid #7e22ce;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .card-header {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #f0abfc;
+            border-bottom: 1px solid #581c87;
+            padding-bottom: 0.4rem;
+        }
+
+        /* Tables & Lists Styling */
+        .styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 1.1rem;
+            margin-top: 0.3rem;
+        }
+
+        .styled-table th {
+            background-color: #7e22ce;
+            color: white;
+            text-align: left;
+            padding: 8px 12px;
+            border-radius: 6px 6px 0 0;
+        }
+
+        .styled-table td {
+            padding: 8px 12px;
+            border-bottom: 1px solid #581c87;
+        }
+
+        .styled-table tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .rule-box {
+            background: #9333ea;
+            color: white;
+            padding: 1rem;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 1.3rem;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(147, 51, 234, 0.3);
+        }
+
+        .highlight {
+            color: #f0abfc;
+            font-weight: bold;
+        }
+
+        /* Interactive Quiz Engine Styling */
+        .quiz-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .quiz-question {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #f8fafc;
+            background: #2e1065;
+            padding: 1rem 1.4rem;
+            border-radius: 12px;
+            border-left: 6px solid #c084fc;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.8rem;
+        }
+
+        @media (max-width: 640px) {
+            .options-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .opt-btn {
+            background: #3b0764;
+            color: white;
+            border: 2px solid #7e22ce;
+            padding: 0.85rem;
+            font-size: 1.15rem;
+            font-weight: 600;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: left;
+        }
+
+        .opt-btn:hover:not(:disabled) {
+            background: #581c87;
+            border-color: #c084fc;
+            transform: translateY(-2px);
+        }
+
+        .opt-btn.correct {
+            background: #15803d !important;
+            border-color: #22c55e !important;
+            color: white;
+        }
+
+        .opt-btn.incorrect {
+            background: #991b1b !important;
+            border-color: #f87171 !important;
+            color: white;
+        }
+
+        .feedback-banner {
+            min-height: 42px;
+            font-size: 1.15rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding: 4px 12px;
+        }
+
+        .feedback-banner.show {
+            opacity: 1;
+        }
+
+        .feedback-banner.correct {
+            background: rgba(34, 197, 94, 0.25);
+            color: #4ade80;
+            border: 1px solid #22c55e;
+        }
+
+        .feedback-banner.incorrect {
+            background: rgba(239, 68, 68, 0.25);
+            color: #f87171;
+            border: 1px solid #ef4444;
+        }
+
+        /* Item Dots Bar for Paginated Quiz Items */
+        .quiz-pagination {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 0.4rem;
+        }
+
+        .quiz-dot {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: #3b0764;
+            border: 2px solid #7e22ce;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .quiz-dot.active {
+            background: #a855f7;
+            border-color: #f0abfc;
+            transform: scale(1.1);
+        }
+
+        .quiz-dot.done-correct {
+            background: #166534;
+            border-color: #22c55e;
+        }
+
+        .quiz-dot.done-incorrect {
+            background: #991b1b;
+            border-color: #f87171;
+        }
+
+        /* Text Area for Writing Activity */
+        .story-editor {
+            width: 100%;
+            height: 180px;
+            background: #2e1065;
+            border: 2px solid #7e22ce;
+            border-radius: 12px;
+            padding: 1rem;
+            color: #f8fafc;
+            font-size: 1.15rem;
+            resize: vertical;
+            outline: none;
+            user-select: text;
+        }
+
+        .story-editor:focus {
+            border-color: #c084fc;
+        }
+
+        /* Bottom Controls Toolbar */
+        footer {
+            height: 75px;
+            background: rgba(46, 16, 101, 0.9);
+            border-top: 2px solid #581c87;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+            z-index: 10;
+        }
+
+        .nav-btn {
+            background: #9333ea;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.8rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 14px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(147, 51, 234, 0.4);
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-btn:hover:not(:disabled) {
+            background: #7e22ce;
+            transform: scale(1.03);
+            box-shadow: 0 6px 16px rgba(147, 51, 234, 0.6);
+        }
+
+        .nav-btn:disabled {
+            background: #3b0764;
+            color: #701a75;
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none;
+        }
+
+        /* Reading Box */
+        .reading-box {
+            background: #2e1065;
+            border-left: 6px solid #f0abfc;
+            padding: 1.5rem;
+            border-radius: 12px;
+            font-size: 1.25rem;
+            line-height: 1.7;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Top Navigation Header -->
+        <header>
+            <div class="logo-title">
+                <span>ENGLISH A1</span>
+                <span class="badge-tag">Lesson 2: Present Continuous</span>
+            </div>
+            <div class="slide-counter" id="counterDisplay">Slide 1 / 17</div>
+        </header>
+
+        <!-- Slide Presentation Canvas -->
+        <main id="slideCanvas">
+
+            <!-- Slide 1: Welcome & Objectives -->
+            <div class="slide active">
+                <div class="slide-header">
+                    <h1 class="slide-title">Welcome to Lesson 2!</h1>
+                    <p class="slide-subtitle">Present Continuous Tense - Consolidation & Practice</p>
+                </div>
+                <div class="slide-content">
+                    <div class="card" style="justify-content: center; align-items: center; text-align: center;">
+                        <h2 style="color: #c084fc; font-size: 1.8rem;">Learning Objectives</h2>
+                        <ul style="text-align: left; font-size: 1.25rem; line-height: 2; margin-top: 1rem; list-style-type: '✓ ';">
+                            <li>Recognize and use 11 additional action verbs.</li>
+                            <li>Apply spelling rules when adding <strong>-ing</strong>.</li>
+                            <li>Form affirmative and negative sentences correctly.</li>
+                            <li>Ask and answer Yes/No questions.</li>
+                            <li>Describe everyday activities using the Present Continuous.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Vocabulary Expansion -->
+            <div class="slide">
+                <div class="slide-header">
+                    <h1 class="slide-title">PART 1: Vocabulary Expansion</h1>
+                    <p class="slide-subtitle">11 New Action Verbs</p>
+                </div>
+                <div class="slide-content">
+                    <div class="grid-2">
+                        <div class="card">
+                            <div class="card-header">Action Verbs List (1/2)</div>
+                            <table class="styled-table">
+                                <tr><th>Verb</th><th>Meaning</th><th>Verb + ING</th></tr>
+                                <tr><td>Move</td><td>Mover</td><td><strong class="highlight">Moving</strong></td></tr>
+                                <tr><td>Tell</td><td>Contar</td><td><strong class="highlight">Telling</strong></td></tr>
+                                <tr><td>Travel</td><td>Viajar</td><td><strong class="highlight">Travelling</strong></td></tr>
+                                <tr><td>Wait</td><td>Esperar</td><td><strong class="highlight">Waiting</strong></td></tr>
+                                <tr><td>Eat</td><td>Comer</td><td><strong class="highlight">Eating</strong></td></tr>
+                                <tr><td>Ride</td><td>Montar/Andar</td><td><strong class="highlight">Riding</strong></td></tr>
+                            </table>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">Action Verbs List (2/2)</div>
+                            <table class="styled-table">
+                                <tr><th>Verb</th><th>Meaning</th><th>Verb + ING</th></tr>
+                                <tr><td>Lie</td><td>Estar acostado</td><td><strong class="highlight">Lying</strong></td></tr>
+                                <tr><td>Go</td><td>Ir</td><td><strong class="highlight">Going</strong></td></tr>
+                                <tr><td>Buy</td><td>Comprar</td><td><strong class="highlight">Buying</strong></td></tr>
+                                <tr><td>Bring</td><td>Traer</td><td><strong class="highlight">Bringing</strong></td></tr>
+                                <tr><td>Put</td><td>Poner</td><td><strong class="highlight">Putting</strong></td></tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Grammar Structure & Base Rules -->
+            <div class="slide">
+                <div class="slide-header">
+                    <h1 class="slide-title">Grammar Explanation: Base Structure</h1>
+                    <p class="slide-subtitle">Actions happening NOW!</p>
+                </div>
+                <div class="slide-content">
+                    <div class="rule-box">
+                        Subject + am / is / are + Verb-ING
+                    </div>
+                    <div class="grid-2">
+                        <div class="card">
+                            <div class="card-header">Examples</div>
+                            <ul style="line-height: 2;">
+                                <li><strong>I am</strong> eating breakfast.</li>
+                                <li><strong>She is</strong> waiting for her friend.</li>
+                                <li><strong>They are</strong> travelling by bus.</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">Rule 1: Most Verbs</div>
+                            <p>Simply add <strong>-ing</strong> to the base verb:</p>
+                            <p class="highlight">eat → eating | wait → waiting | go → going</p>
+                            <p style="margin-top: 10px;"><em>Example: He is eating a sandwich.</em></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Spelling Rules -->
+            <div class="slide">
+                <div class="slide-header">
+                    <h1 class="slide-title">Spelling Rules: Special Endings</h1>
+                    <p class="slide-subtitle">Rules 2, 3 and Special Exceptions</p>
+                </div>
+                <div class="slide-content">
+                    <div class="grid-2">
+                        <div class="card">
+                            <div class="card-header">Rule 2: Verbs ending in -E</div>
+                            <p>Remove the final <strong>-e</strong> and add <strong>-ing</strong>.</p>
+                            <ul style="line-height: 1.8;">
+                                <li>Ride → <strong class="highlight">Riding</strong></li>
+                                <li>Write → <strong class="highlight">Writing</strong></li>
+                                <li>Make → <strong class="highlight">Making</strong></li>
+                            </ul>
+                            <p><em>Example: She is riding her bicycle.</em></p>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">Rule 3 & 4: CVC & LIE</div>
+                            <p><strong>Rule 3:</strong> Double consonant for short CVC verbs: <br><span class="highlight">Run → Running | Sit → Sitting | Put → Putting</span></p>
+                            <p style="margin-top: 10px;"><strong>Rule 4 (Special LIE):</strong> Replace <strong>-ie</strong> with <strong>-ying</strong>: <br><span class="highlight">LIE → LYING</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5: Practice 1 - Spelling Check -->
+            <div class="slide">
+                <div class="slide-header">
+                    <h1 class="slide-title">Practice 1: Spelling Check</h1>
+                    <p class="slide-subtitle">10 Interactive Exercises (CVC Rules & Positive -ING Forms)</p>
+                </div>
+                <div class="slide-content quiz-container" id="quizContainerP1">
+                    <div class="quiz-pagination" id="dotsP1"></div>
+                    <div class="quiz-question" id="qP1-text"></div>
+                    <div class="options-grid" id="qP1-opts"></div>
+                    <div class="feedback-banner" id="qP1-fb"></div>
+                </div>
+            </div>
+
+            <!-- Slide 6: Negative Sentences Explanation -->
+            <div class="slide">
+                <div class="slide-header">
+                    <h1 class="slide-title">Negative Sentences</h1>
+                    <p class="slide-subtitle">Expressing actions that are NOT happening</p>
+                </div>
+                <div class="slide-content">
+                    <div class="rule-box">
+                        Subject + am/is/are + NOT + Verb-ING
+                    </div>
+                    <div class="grid-2">
+                        <div class="card">
+                            <div class="card-header">Negative Forms</div>
+                            <table class="styled-table">
+                                <tr><th>Subject</th><th>Negative Form</th></tr>
+                                <tr><td>I</td><td>am not</td></tr>
+                                <tr><td>He / She / It</td><td>is not / isn't</td></tr>
+                                <tr><td>You / We / They</td><td>are not / aren't</td></tr>
+                            </table>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">Important Warning!</div>
+                            <p>❌ Never use <em>don't</em> or <em>doesn't</em> with Present Continuous!</p>
+                            <p style="color: #f87171;">Incorrect: She doesn't eating.</p>
+                            <p style="color: #4ade80; font-weight: bold;">Correct: She isn't eating.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 7: Negative Sentences Practice -->
+            <div class="slide">
+                <div class="slide-header">
+                    <h1 class="slide-title">Practice: Negative Sentences</h1>
+                    <p class="slide-subtitle">10 Interactive Exercises on Negative Structure</p>
+                </div>
+                <div class="slide-content quiz-container" id="quizContainerNeg">
+                    <div class="quiz-pagination" id="dotsNeg"></div>
+                    <div class="quiz-question" id="qNeg-text"></div>
+                    <div class="options-grid" id="qNeg-opts"></div>
+                    <div class="feedback-banner" id="qNeg-fb"></div>
+                </div>
+            </div>
+
+            <!-- Slide 8: Interrogative Sentences Explanation -->
+            <div class="slide">
+                <div class="slide-header">
+                    <h1 class="slide-title">Questions & Short Answers</h1>
+                    <p class="slide-subtitle">Asking about current actions</p>
+                </div>
+                <div class="slide-content">
+                    <div class="rule-box">
+                        Am / Is / Are + Subject + Verb-ING + ?
+                    </div>
+                    <div class="grid-2">
+                        <div class="card">
+                            <div class="card-header">Question Formation</div>
+                            <ul style="line-height: 1.8;">
+                                <li><strong>Is he running?</strong></li>
+                                <li><strong>Are you waiting?</strong></li>
+                                <li><strong>Are they travelling?</strong></li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">Short Answers</div>
+                            <p>Do NOT repeat the main verb!</p>
+                            <p>✓ <strong>Yes, he is.</strong> (Not: Yes, he is running.)</p>
+                            <p>✓ <strong>No, they aren't.</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 9: Practice 2 - Questions & Short Answers -->
+            <div class="slide">
+                <div class="slide-header">
+                    <h1 class="slide-title">Practice 2: Questions & Short Answers</h1>
+                    <p class="slide-subtitle">10 Interactive Exercises (5 Question Forms & 5 Short Answers)</p>
+                </div>
+                <div class="slide-content quiz-container" id="quizContainerP2">
+                    <div class="quiz-pagination" id="dotsP2"></div>
+                    <div class="quiz-question" id="qP2-text"></div>
+                    <div class="options-grid" id="qP2-opts"></div>
+                    <div class="feedback-banner" id="qP2-fb"></div>
+                </div>
+            </div>
+
+            <!-- Slide 10: PART 2 - Grammar Challenge Overview -->
+            <div class="slide">
+                <div class="slide-header">
+                    <h1 class="slide-title">PART 2: Grammar Challenge</h1>
+                    <p class="slide-subtitle">Sentence Structure & Subject Agreement</p>
+                </div>
+                <div class="slide-content">
+                    <div class="rule-box">
+                        Subject + am / is / are + Verb-ING
+                    </div>
+                    <div class="grid-2">
+                        <div class="card">
+                            <div class="card-header">Subject - Auxiliary Agreement</div>
+                            <ul style="line-height: 2;">
+                                <li><strong>I</strong> → am</li>
+                                <li><strong>He / She / It</strong> → is</li>
+                                <li><strong>You / We / They</strong> → are</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">Challenge Instructions</div>
+                            <p>In the next slide, you will complete <strong>10 sentence construction challenges</strong>.</p>
+                            <p style="margin-top: 10px;">Select the sentence with the correct subject, auxiliary, and spelling!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 11: Grammar Challenge Exercises -->
+            <div class="slide">
+                <div class="slide-header">
+                    <h1 class="slide-title">Grammar Challenge: Build the Sentences</h1>
+                    <p class="slide-subtitle">10 Interactive Sentence Construction Challenges</p>
+                </div>
+                <div class="slide-content quiz-container" id="quizContainerGC">
+                    <div class="quiz-pagination" id="dotsGC"></div>
+                    <div class="quiz-question" id="qGC-text"></div>
+                    <div class="options-grid" id="qGC-opts"></div>
+                    <div class="feedback-banner" id="qGC-fb"></div>
+                </div>
+            </div>
+
+            <!-- Slide 12: Reading Comprehension Story -->
+            <div class="slide">
+                <div class="slide-header">
+                    <h1 class="slide-title">Reading Comprehension</h1>
+                    <p class="slide-subtitle">"A Busy Saturday"</p>
+                </div>
+                <div class="slide-content">
+                    <div class="reading-box">
+                        It is Saturday morning. The Johnson family is having a busy day.<br><br>
+                        <strong>Mr. Johnson is cooking</strong> breakfast in the kitchen. His wife <strong>is preparing</strong> coffee. Their daughter, Emily, <strong>is writing</strong> an email to her friend. Her brother, Peter, <strong>is playing</strong> video games.<br><br>
+                        The family dog <strong>is lying</strong> under the table. The children <strong>are not watching</strong> television. They <strong>are enjoying</strong> their Saturday morning.<br><br>
+                        Later, the family is going to the supermarket. Emily is bringing a shopping bag, and Peter is putting books in his backpack.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 13: Reading Quiz -->
+            <div class="slide">
+                <div class="slide-header">
+                    <h1 class="slide-title">Reading Quiz: Comprehension Check</h1>
+                    <p class="slide-subtitle">3 Questions based on "A Busy Saturday"</p>
+                </div>
+                <div class="slide-content quiz-container" id="quizContainerRQ">
+                    <div class="quiz-pagination" id="dotsRQ"></div>
+                    <div class="quiz-question" id="qRQ-text"></div>
+                    <div class="options-grid" id="qRQ-opts"></div>
+                    <div class="feedback-banner" id="qRQ-fb"></div>
+                </div>
+            </div>
+
+            <!-- Slide 14: Creative Writing Production -->
+            <div class="slide">
+                <div class="slide-header">
+                    <h1 class="slide-title">PART 3: Create Your Own Story</h1>
+                    <p class="slide-subtitle">Write "A Very Busy Day"</p>
+                </div>
+                <div class="slide-content">
+                    <p style="font-size: 1.1rem;">Write sentences describing what your family or friends are doing right now (Include 5 affirmative, 2 negative, and 2 questions):</p>
+                    <textarea class="story-editor" placeholder="Example: My mom is cooking dinner. My father is reading. My grandparents aren't watching TV. Is my mother sleeping? No, she isn't. She is cooking!"></textarea>
+                </div>
+            </div>
+
+            <!-- Slide 15: Everyday Situations -->
+            <div class="slide">
+                <div class="slide-header">
+                    <h1 class="slide-title">Everyday Situations: What Is Happening?</h1>
+                    <p class="slide-subtitle">5 Interactive Real-Life Scenarios</p>
+                </div>
+                <div class="slide-content quiz-container" id="quizContainerES">
+                    <div class="quiz-pagination" id="dotsES"></div>
+                    <div class="quiz-question" id="qES-text"></div>
+                    <div class="options-grid" id="qES-opts"></div>
+                    <div class="feedback-banner" id="qES-fb"></div>
+                </div>
+            </div>
+
+            <!-- Slide 16: Final Assessment -->
+            <div class="slide">
+                <div class="slide-header">
+                    <h1 class="slide-title">PART 4: Final Grammar Assessment</h1>
+                    <p class="slide-subtitle">10 Assessment Questions</p>
+                </div>
+                <div class="slide-content quiz-container" id="quizContainerFA">
+                    <div class="quiz-pagination" id="dotsFA"></div>
+                    <div class="quiz-question" id="qFA-text"></div>
+                    <div class="options-grid" id="qFA-opts"></div>
+                    <div class="feedback-banner" id="qFA-fb"></div>
+                </div>
+            </div>
+
+            <!-- Slide 17: Evaluation & Conclusion -->
+            <div class="slide">
+                <div class="slide-header">
+                    <h1 class="slide-title">Great Job! Lesson Completed</h1>
+                    <p class="slide-subtitle">Final Assessment Rubric</p>
+                </div>
+                <div class="slide-content">
+                    <table class="styled-table">
+                        <tr><th>Criterion</th><th>Max Points</th></tr>
+                        <tr><td>Vocabulary Exercises</td><td>10 pts</td></tr>
+                        <tr><td>Grammar Exercises</td><td>10 pts</td></tr>
+                        <tr><td>Reading Comprehension</td><td>10 pts</td></tr>
+                        <tr><td>Writing Production</td><td>20 pts</td></tr>
+                        <tr><td>Final Assessment</td><td>10 pts</td></tr>
+                        <tr><th>Total Score</th><th>60 pts (Passing score: 42)</th></tr>
+                    </table>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Navigation Footer -->
+        <footer>
+            <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">◄ Previous</button>
+            <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Next ►</button>
+        </footer>
+    </div>
+
+    <script>
+        // Presentation State Engine
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const counterDisplay = document.getElementById('counterDisplay');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        function updatePresentation() {
+            slides.forEach((slide, idx) => {
+                slide.classList.toggle('active', idx === currentSlideIndex);
+            });
+            
+            counterDisplay.textContent = `Slide ${currentSlideIndex + 1} / ${slides.length}`;
+            prevBtn.disabled = currentSlideIndex === 0;
+            nextBtn.disabled = currentSlideIndex === slides.length - 1;
+        }
+
+        function changeSlide(direction) {
+            const targetIndex = currentSlideIndex + direction;
+            if (targetIndex >= 0 && targetIndex < slides.length) {
+                currentSlideIndex = targetIndex;
+                updatePresentation();
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.target.tagName === 'TEXTAREA' || e.target.tagName === 'INPUT') return;
+            if (e.key === 'ArrowRight' || e.key === 'Space') {
+                changeSlide(1);
+            } else if (e.key === 'ArrowLeft') {
+                changeSlide(-1);
+            }
+        });
+
+        // Modular Dynamic Quiz Renderer Engine
+        function renderPaginatedQuiz(config) {
+            const container = document.getElementById(config.containerId);
+            const dotsContainer = document.getElementById(config.dotsId);
+            const questionText = document.getElementById(config.questionId);
+            const optionsGrid = document.getElementById(config.optionsId);
+            const feedbackBanner = document.getElementById(config.feedbackId);
+
+            let activeIndex = 0;
+            const userAnswers = new Array(config.questions.length).fill(null);
+
+            function renderDots() {
+                dotsContainer.innerHTML = '';
+                config.questions.forEach((_, idx) => {
+                    const dot = document.createElement('div');
+                    dot.className = `quiz-dot ${idx === activeIndex ? 'active' : ''}`;
+                    if (userAnswers[idx] !== null) {
+                        dot.classList.add(userAnswers[idx] ? 'done-correct' : 'done-incorrect');
+                    }
+                    dot.textContent = idx + 1;
+                    dot.onclick = () => {
+                        activeIndex = idx;
+                        renderQuestion();
+                    };
+                    dotsContainer.appendChild(dot);
+                });
+            }
+
+            function renderQuestion() {
+                renderDots();
+                const q = config.questions[activeIndex];
+                questionText.innerHTML = `${activeIndex + 1}. ${q.question}`;
+                optionsGrid.innerHTML = '';
+                feedbackBanner.className = 'feedback-banner';
+                feedbackBanner.textContent = '';
+
+                q.options.forEach((opt, optIdx) => {
+                    const btn = document.createElement('button');
+                    btn.className = 'opt-btn';
+                    btn.textContent = opt;
+
+                    if (userAnswers[activeIndex] !== null) {
+                        btn.disabled = true;
+                        if (optIdx === q.answer) {
+                            btn.classList.add('correct');
+                        }
+                    }
+
+                    btn.onclick = () => {
+                        const isCorrect = optIdx === q.answer;
+                        userAnswers[activeIndex] = isCorrect;
+                        
+                        // Disable buttons & mark selected
+                        Array.from(optionsGrid.children).forEach((b, i) => {
+                            b.disabled = true;
+                            if (i === q.answer) b.classList.add('correct');
+                            if (i === optIdx && !isCorrect) b.classList.add('incorrect');
+                        });
+
+                        feedbackBanner.textContent = isCorrect 
+                            ? '✓ Correct! Good job.' 
+                            : `✕ Incorrect. ${q.explanation || 'Try reviewing the grammar rule.'}`;
+                        feedbackBanner.className = `feedback-banner show ${isCorrect ? 'correct' : 'incorrect'}`;
+
+                        renderDots();
+                    };
+
+                    optionsGrid.appendChild(btn);
+                });
+
+                if (userAnswers[activeIndex] !== null) {
+                    const isCorrect = userAnswers[activeIndex];
+                    feedbackBanner.textContent = isCorrect 
+                        ? '✓ Correct! Good job.' 
+                        : `✕ Incorrect. ${q.explanation || ''}`;
+                    feedbackBanner.className = `feedback-banner show ${isCorrect ? 'correct' : 'incorrect'}`;
+                }
+            }
+
+            renderQuestion();
+        }
+
+        // Quiz Data Initialization
+        window.onload = function() {
+            updatePresentation();
+
+            // Slide 5: Practice 1 - Spelling Check
+            renderPaginatedQuiz({
+                containerId: 'quizContainerP1',
+                dotsId: 'dotsP1',
+                questionId: 'qP1-text',
+                optionsId: 'qP1-opts',
+                feedbackId: 'qP1-fb',
+                questions: [
+                    { question: "What is the correct -ing form of 'put'?", options: ["puting", "putting", "putes", "putt"], answer: 1, explanation: "CVC rule: Double the final consonant." },
+                    { question: "What is the correct -ing form of 'ride'?", options: ["rideing", "riding", "ridding", "rides"], answer: 1, explanation: "Verbs ending in -e drop the -e." },
+                    { question: "What is the correct -ing form of 'lie'?", options: ["lieing", "liying", "lying", "ling"], answer: 2, explanation: "Special rule: -ie becomes -ying." },
+                    { question: "What is the correct -ing form of 'run'?", options: ["runing", "running", "run-ing", "runs"], answer: 1, explanation: "CVC rule: Double the consonant." },
+                    { question: "What is the correct -ing form of 'travel'?", options: ["traveling", "travelling", "traveing", "Both A and B are acceptable"], answer: 3, explanation: "Both traveling (US) and travelling (UK) are accepted." },
+                    { question: "What is the correct -ing form of 'wait'?", options: ["waitting", "waiting", "waiteing", "waits"], answer: 1, explanation: "Two vowels before consonant: do not double." },
+                    { question: "What is the correct -ing form of 'move'?", options: ["moveing", "moving", "movving", "moves"], answer: 1, explanation: "Drop the silent -e before adding -ing." },
+                    { question: "What is the correct -ing form of 'buy'?", options: ["buing", "buying", "buyping", "buies"], answer: 1, explanation: "Verbs ending in vowel + y simply add -ing." },
+                    { question: "What is the correct -ing form of 'sit'?", options: ["siting", "sitting", "siteing", "sitts"], answer: 1, explanation: "CVC rule: Double the final 't'." },
+                    { question: "What is the correct -ing form of 'bring'?", options: ["bringing", "bringging", "bring-ing", "brings"], answer: 0, explanation: "Simply add -ing to the base verb." }
+                ]
+            });
+
+            // Slide 7: Practice Negative Sentences
+            renderPaginatedQuiz({
+                containerId: 'quizContainerNeg',
+                dotsId: 'dotsNeg',
+                questionId: 'qNeg-text',
+                optionsId: 'qNeg-opts',
+                feedbackId: 'qNeg-fb',
+                questions: [
+                    { question: "She ___ (not / eat) breakfast right now.", options: ["doesn't eating", "is not eating", "not eating", "isn't eat"], answer: 1, explanation: "Use is + not + verb-ing." },
+                    { question: "They ___ (not / wait) for the bus.", options: ["don't waiting", "aren't waiting", "are not wait", "not waiting"], answer: 1, explanation: "Use are + not + verb-ing." },
+                    { question: "I ___ (not / lie) on the bed.", options: ["am not lying", "isn't lying", "don't lying", "am not lieing"], answer: 0, explanation: "I requires 'am not'." },
+                    { question: "We ___ (not / buy) a new car.", options: ["aren't buying", "doesn't buy", "not buying", "are not buy"], answer: 0, explanation: "We requires 'aren't' + verb-ing." },
+                    { question: "He ___ (not / move) to a new house.", options: ["isn't moving", "doesn't moving", "is not move", "not moving"], answer: 0, explanation: "He requires 'isn't' + verb-ing." },
+                    { question: "The dog ___ (not / run) in the park.", options: ["don't running", "isn't running", "aren't running", "is not run"], answer: 1, explanation: "The dog (it) takes 'isn't'." },
+                    { question: "You ___ (not / tell) the truth.", options: ["aren't telling", "doesn't tell", "isn't telling", "not telling"], answer: 0, explanation: "You takes 'aren't'." },
+                    { question: "I ___ (not / travel) to London today.", options: ["am not travelling", "aren't travelling", "don't travelling", "isn't travelling"], answer: 0, explanation: "I takes 'am not'." },
+                    { question: "The students ___ (not / write) notes.", options: ["isn't writing", "aren't writing", "don't writing", "not writing"], answer: 1, explanation: "Plural subject takes 'aren't'." },
+                    { question: "My sister ___ (not / put) her coat on.", options: ["isn't putting", "doesn't putting", "aren't putting", "not putting"], answer: 0, explanation: "My sister (she) takes 'isn't'." }
+                ]
+            });
+
+            // Slide 9: Practice 2 - Questions & Short Answers
+            renderPaginatedQuiz({
+                containerId: 'quizContainerP2',
+                dotsId: 'dotsP2',
+                questionId: 'qP2-text',
+                optionsId: 'qP2-opts',
+                feedbackId: 'qP2-fb',
+                questions: [
+                    { question: "___ she travelling by train?", options: ["Is", "Are", "Do", "Does"], answer: 0, explanation: "She takes 'Is' in interrogative sentences." },
+                    { question: "___ they waiting outside?", options: ["Is", "Are", "Am", "Do"], answer: 1, explanation: "They takes 'Are'." },
+                    { question: "Is he eating dinner? - Yes, ___.", options: ["he eats", "he is", "he is eating", "he does"], answer: 1, explanation: "Short answers use auxiliary verb only: Yes, he is." },
+                    { question: "Are you riding your bike? - No, ___.", options: ["I don't", "I'm not", "I am not riding", "I isn't"], answer: 1, explanation: "Answer to 'Are you' is 'No, I'm not'." },
+                    { question: "___ I moving too fast?", options: ["Am", "Is", "Are", "Do"], answer: 0, explanation: "Subject 'I' requires 'Am'." },
+                    { question: "Are they buying tickets? - Yes, ___.", options: ["they do", "they are", "they buying", "they are buying"], answer: 1, explanation: "Short answer: Yes, they are." },
+                    { question: "Is your mom cooking? - No, ___.", options: ["she doesn't", "she isn't", "she not", "she don't"], answer: 1, explanation: "Short answer: No, she isn't." },
+                    { question: "___ we going to the park?", options: ["Is", "Are", "Am", "Do"], answer: 1, explanation: "Subject 'We' takes 'Are'." },
+                    { question: "Is the cat lying on the floor? - Yes, ___.", options: ["it is", "it lies", "it does", "it is lying"], answer: 0, explanation: "Short answer: Yes, it is." },
+                    { question: "___ you telling a story?", options: ["Is", "Are", "Do", "Does"], answer: 1, explanation: "Subject 'You' takes 'Are'." }
+                ]
+            });
+
+            // Slide 11: Grammar Challenge
+            renderPaginatedQuiz({
+                containerId: 'quizContainerGC',
+                dotsId: 'dotsGC',
+                questionId: 'qGC-text',
+                optionsId: 'qGC-opts',
+                feedbackId: 'qGC-fb',
+                questions: [
+                    { question: "Select the correct sentence:", options: ["They is traveling to Spain.", "They are travelling to Spain.", "They travelling to Spain.", "They am travelling to Spain."], answer: 1 },
+                    { question: "Select the correct sentence:", options: ["He are putting the books away.", "He is puting the books away.", "He is putting the books away.", "He putting the books away."], answer: 2 },
+                    { question: "Select the correct sentence:", options: ["I am writing a letter.", "I is writing a letter.", "I are writing a letter.", "I writing a letter."], answer: 0 },
+                    { question: "Select the correct sentence:", options: ["She isn't rideing her bike.", "She isn't riding her bike.", "She don't riding her bike.", "She not riding her bike."], answer: 1 },
+                    { question: "Select the correct sentence:", options: ["We are lying on the beach.", "We are lieing on the beach.", "We is lying on the beach.", "We am lying on the beach."], answer: 0 },
+                    { question: "Select the correct sentence:", options: ["Is you waiting for me?", "Are you waiting for me?", "Do you waiting for me?", "Am you waiting for me?"], answer: 1 },
+                    { question: "Select the correct sentence:", options: ["Look! The bus is coming.", "Look! The bus coming.", "Look! The bus are coming.", "Look! The bus is comeing."], answer: 0 },
+                    { question: "Select the correct sentence:", options: ["My friends aren't buyed snacks.", "My friends aren't buying snacks.", "My friends doesn't buying snacks.", "My friends isn't buying snacks."], answer: 1 },
+                    { question: "Select the correct sentence:", options: ["Are he telling a joke?", "Is he telling a joke?", "Does he telling a joke?", "Is he tell a joke?"], answer: 1 },
+                    { question: "Select the correct sentence:", options: ["I am not moveing the table.", "I am not moving the table.", "I isn't moving the table.", "I don't moving the table."], answer: 1 }
+                ]
+            });
+
+            // Slide 13: Reading Quiz
+            renderPaginatedQuiz({
+                containerId: 'quizContainerRQ',
+                dotsId: 'dotsRQ',
+                questionId: 'qRQ-text',
+                optionsId: 'qRQ-opts',
+                feedbackId: 'qRQ-fb',
+                questions: [
+                    { question: "What is Mr. Johnson doing?", options: ["He is preparing coffee.", "He is cooking breakfast.", "He is playing video games.", "He is watching TV."], answer: 1 },
+                    { question: "Where is the dog lying?", options: ["On the sofa", "In the garden", "Under the table", "On the bed"], answer: 2 },
+                    { question: "What are the children NOT doing?", options: ["They are not enjoying Saturday.", "They are not watching television.", "They are not playing games.", "They are not going to the market."], answer: 1 }
+                ]
+            });
+
+            // Slide 15: Everyday Situations
+            renderPaginatedQuiz({
+                containerId: 'quizContainerES',
+                dotsId: 'dotsES',
+                questionId: 'qES-text',
+                optionsId: 'qES-opts',
+                feedbackId: 'qES-fb',
+                questions: [
+                    { question: "Situation: You are at a restaurant. What is the waiter doing?", options: ["He is bringing the food.", "He is sleeping.", "He is buying a car.", "He is driving a bus."], answer: 0 },
+                    { question: "Situation: You are at the bus stop. What are you doing?", options: ["I am riding a horse.", "I am waiting for the bus.", "I am cooking dinner.", "I am lying on the bed."], answer: 1 },
+                    { question: "Situation: You are at a store with money. What are you doing?", options: ["I am buying shoes.", "I am telling a story.", "I am traveling to Asia.", "I am sleeping."], answer: 0 },
+                    { question: "Situation: You are on a plane to Paris. What are you doing?", options: ["I am traveling.", "I am cooking.", "I am driving.", "I am running."], answer: 0 },
+                    { question: "Situation: Your friend is telling a funny story. What are you doing?", options: ["I am laughing.", "I am buying tickets.", "I am moving furniture.", "I am crying."], answer: 0 }
+                ]
+            });
+
+            // Slide 16: Final Assessment
+            renderPaginatedQuiz({
+                containerId: 'quizContainerFA',
+                dotsId: 'dotsFA',
+                questionId: 'qFA-text',
+                optionsId: 'qFA-opts',
+                feedbackId: 'qFA-fb',
+                questions: [
+                    { question: "Listen! The baby ___ (cry) right now.", options: ["is crying", "are crying", "crying", "is cry"], answer: 0 },
+                    { question: "Identify the correct negative form: 'We / not / go / home'", options: ["We not going home.", "We aren't going home.", "We isn't going home.", "We don't going home."], answer: 1 },
+                    { question: "Choose the correct question form: 'you / read / a book?'", options: ["Is you reading a book?", "Do you reading a book?", "Are you reading a book?", "Are you read a book?"], answer: 2 },
+                    { question: "Correct spelling of 'RUN + ING':", options: ["runing", "running", "runnning", "runeing"], answer: 1 },
+                    { question: "Correct spelling of 'MAKE + ING':", options: ["makeing", "making", "makking", "makes"], answer: 1 },
+                    { question: "Short answer: 'Is she waiting?' -> 'No, ___.'", options: ["she isn't", "she doesn't", "she not", "she don't"], answer: 0 },
+                    { question: "___ they buying groceries at the market?", options: ["Is", "Are", "Am", "Do"], answer: 1 },
+                    { question: "Look! The cat ___ (lie) on the table.", options: ["is lieing", "is lying", "is liying", "are lying"], answer: 1 },
+                    { question: "I ___ (travel) with my family this week.", options: ["am travelling", "is travelling", "are travelling", "travelling"], answer: 0 },
+                    { question: "The boys ___ (not / play) football now.", options: ["isn't playing", "aren't playing", "don't playing", "not playing"], answer: 1 }
+                ]
+            });
+        };
+    </script>
+</body>
+</html>
